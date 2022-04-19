@@ -41,7 +41,7 @@ public class IOFile {
 
     public static void viet(String file, List<String> list) throws FileNotFoundException, IOException {
         OutputStream outputStream = new FileOutputStream(file);
-        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
+        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream,StandardCharsets.UTF_8);
         for (String item: list){
             outputStreamWriter.write(item);
             outputStreamWriter.write("\n");

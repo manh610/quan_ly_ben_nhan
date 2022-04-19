@@ -22,7 +22,7 @@ public class Home extends javax.swing.JFrame {
     public Home() {
         initComponents();
         lbTime.setText( "Ngày khám: " + java.time.LocalDate.now().toString());
-        file = "src/file/BS.TXT";
+        file = "C:\\Users\\Manh\\Desktop\\quan_ly_bn\\src\\file\\BS.TXT";
         loadBS();
         setTitle("Phòng khám nội soi đáy mắt");
         setLocationRelativeTo(null);

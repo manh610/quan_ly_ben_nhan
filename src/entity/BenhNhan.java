@@ -12,19 +12,28 @@ package entity;
 public class BenhNhan {
     private String ten, gioiTinh, diaChi, sdt;
     private int tuoi;
-    private String bacSi, anh;
+    private String bacSi, anh1, anh2;
 
     public BenhNhan() {
     }
 
-    public BenhNhan(String ten, String gioiTinh, String diaChi, String sdt, int tuoi, String bacSi, String anh) {
+    public BenhNhan(String ten, String gioiTinh, String diaChi, String sdt, int tuoi, String bacSi, String anh1, String anh2) {
         this.ten = ten;
         this.gioiTinh = gioiTinh;
         this.diaChi = diaChi;
         this.sdt = sdt;
         this.tuoi = tuoi;
         this.bacSi = bacSi;
-        this.anh = anh;
+        this.anh1 = anh1;
+        this.anh2 = anh2;
+    }
+
+    public String getAnh1() {
+        return anh1;
+    }
+
+    public void setAnh1(String anh1) {
+        this.anh1 = anh1;
     }
 
     
@@ -69,12 +78,12 @@ public class BenhNhan {
         this.bacSi = bacSi;
     }
 
-    public String getAnh() {
-        return anh;
+    public String getAnh2() {
+        return anh2;
     }
 
-    public void setAnh(String anh) {
-        this.anh = anh;
+    public void setAnh2(String anh) {
+        this.anh2 = anh;
     }
 
     public String getSdt() {
@@ -87,7 +96,7 @@ public class BenhNhan {
     
     @Override
     public String toString() {
-        return ten+"-"+sdt+"-"+tuoi+"-"+gioiTinh+"-"+diaChi+"-"+bacSi+"-"+anh; 
+        return ten+"-"+sdt+"-"+tuoi+"-"+gioiTinh+"-"+diaChi+"-"+bacSi+"-"+anh1+"-"+anh2; 
     }
     
 }

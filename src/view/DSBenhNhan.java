@@ -31,11 +31,12 @@ public class DSBenhNhan extends javax.swing.JFrame {
 
     public DSBenhNhan() {
         initComponents();
-        String cols[] = {"STT", "Tên", "SĐT", "Tuổi", "Giới tính", "Địa chỉ", "BS khám", "Hình ảnh đáy mắt"};
+        String cols[] = {"STT", "Tên", "SĐT", "Tuổi", "Giới tính", "Hình ảnh 1","Hình ảnh 2"};
         tm = new DefaultTableModel(cols, 0);
         tbDS.setModel(tm);
-        tbDS.getColumn("Hình ảnh đáy mắt").setCellRenderer(new myCell());
-        file = "src/file/BN.TXT";
+        tbDS.getColumn("Hình ảnh 1").setCellRenderer(new myCell());
+        tbDS.getColumn("Hình ảnh 2").setCellRenderer(new myCell());
+        file = "C:\\Users\\Manh\\Desktop\\quan_ly_bn\\src\\file\\BN.TXT";
         loadData();
         setTitle("Phòng khám nội soi đáy mắt");
         setLocationRelativeTo(null);
@@ -71,12 +72,14 @@ public class DSBenhNhan extends javax.swing.JFrame {
                 v.add(str[1]);
                 v.add(str[2]);
                 v.add(str[3]);
-                v.add(str[4]);
-                v.add(str[5]);
                 try {
                     JLabel lb = new JLabel();
                     lb.setIcon(Rezise(str[6]));
                     v.add(lb);
+                    JLabel lb1 = new JLabel();
+                    lb1.setIcon(Rezise(str[7]));
+                    v.add(lb1);
+                    
                 } catch (Exception e) {
                     System.out.println("file not found");;
                 }
@@ -163,11 +166,9 @@ public class DSBenhNhan extends javax.swing.JFrame {
         String sdt = tbDS.getValueAt(r, 2).toString();
         int tuoi = Integer.parseInt(tbDS.getValueAt(r, 3).toString());
         String gioiTinh = tbDS.getValueAt(r, 4).toString();
-        String diaChi = tbDS.getValueAt(r, 5).toString();
-        String bacSi = tbDS.getValueAt(r, 6).toString();
         List<String> list = IOFile.doc(file);
         String[] str = list.get(r).split("-");
-        BenhNhan b = new BenhNhan(ten, gioiTinh, diaChi, sdt, tuoi, bacSi, str[6]);
+        BenhNhan b = new BenhNhan(ten, gioiTinh, "", sdt, tuoi, "", str[6], str[7]);
         new PhieuKham(b).setVisible(true);
     }//GEN-LAST:event_tbDSMouseClicked
 
